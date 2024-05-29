@@ -4,9 +4,8 @@ author: "Andre-Ignace Ghonda Lukoki"
 date: "May 20th, 2024"
 output:
   tufte::tufte_html: default
-  bibliography: references.bib
-  html_document:
-    df_print: paged
+      bibliography: references.bib
+      csl: biomed-central.csl
       
 ---
 
