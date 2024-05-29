@@ -4,8 +4,10 @@ author: "Andre-Ignace Ghonda Lukoki"
 date: "May 20th, 2024"
 output:
   tufte::tufte_html: default
+  bibliography: references.bib
   html_document:
     df_print: paged
+      
 ---
 
 ## Introduction
@@ -305,5 +307,7 @@ The linear model performed on this data shows that an increase in the sample siz
 
 ## An implementation in Julia
 
+# References
 
+<div id="refs"></div>
 
