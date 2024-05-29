@@ -1,0 +1,4 @@
+The aim of this project is to create a regression function algorithm in different programming languages.
+This will improve my own knowledge of econometrics (specifically the theoretical and computational aspects of the discipline).
+
+y

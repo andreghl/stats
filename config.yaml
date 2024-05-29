@@ -1,0 +1,43 @@
+---
+
+project: "A Simple Regression"
+author: "Andre-Ignace Ghonda Lukoki"
+url: www.andreghonda.com
+contact: contact@andreghonda.com
+date: !!timestamp 2024-05-20
+description: project.txt
+references: references.bib
+---
+
+R:
+  version: "4.3.1"
+  path: regress.r
+  history: .Rhistory
+  data: .Rdata
+  completed: !!bool true
+---
+
+julia:
+  version: "1.10.3"
+  path: regress.jl
+  packages:
+    - CSV
+    - DataFrames 
+    - Distributions  
+    - GLM 
+    - HypothesisTests
+    - Plots
+    - LinearAlgebra
+    - Random
+    - Statistics
+  completed: !!bool false
+---
+
+post:
+  content: regress.md
+  references: references.bib
+  online: !!bool true
+  url: https://andreghonda.com/projects/regress
+
+...
+
