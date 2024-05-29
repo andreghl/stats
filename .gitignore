@@ -1,2 +1,5 @@
 # ignore all .html files
 .html
+
+# ignore all .md files except README.md
+.md 

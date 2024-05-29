@@ -4,16 +4,14 @@ author: "Andre-Ignace Ghonda Lukoki"
 date: "May 20th, 2024"
 output:
   tufte::tufte_html: default
-      bibliography: references.bib
-      csl: biomed-central.csl
-      
+bibliography: references.bib
 ---
 
 ## Introduction
 
 The first step in this project is to create the data generating process that the function will estimate. This is done by specifying a random variable $X$ and creating another variable, called the dependent variable, that will be a function of that random variable, written as $Y = f(X)$.
 
-In order to match the standard litterature in my courses, a capital letter $X_{i}$ will denote a random variable while it realization will be denoted by a small letter $x_{i}$.
+In order to match the standard literature in my courses, a capital letter $X_{i}$ will denote a random variable while it realization will be denoted by a small letter $x_{i}$.
 
 The independent variable will be a normally distributed variable with the following mean and variance $X_{i} \backsim N(3, \sqrt{2})$. The dependent variable $Y$ will depend on $X$ according to this equation:
 
@@ -306,7 +304,7 @@ The linear model performed on this data shows that an increase in the sample siz
 
 ## An implementation in Julia
 
-# References
+## References
 
-<div id="refs"></div>
+
 

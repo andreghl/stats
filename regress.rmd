@@ -1,0 +1,22 @@
+---
+title: "A Simple Regression"
+author: "Andre-Ignace Ghonda Lukoki"
+date: "May 20th, 2024"
+output:
+  tufte::tufte_html: default
+bibliography: references.bib
+link-citations: yes
+csl: apa.csl
+---
+
+```{r setup, include = FALSE}
+
+library(tufte)
+
+# invalidate cache when the tufte version changes
+knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+
+```
+
+The info from [@Drury] is available.
