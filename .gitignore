@@ -1,5 +1,16 @@
-# ignore all .html files
+# ignore all .html and .cssfiles
 .html
+.css
 
 # ignore all .md files except README.md
 .md 
+
+# ignore the additional .R... files
+.RData
+.Rhistory
+.rmd
+
+# ignore the following directories
+/font
+/img
+/resources
