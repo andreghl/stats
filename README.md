@@ -1,11 +1,20 @@
-The aim of this project is to create a regression function algorithm in different programming languages.
+# A Linear Regression
 
-**Languages:**
+### Description
 
-- ```R```
+<style>
+    .special {
+        font-family: monospace;
+        font-size: 10px;
+    }
+</style>
 
-The algorithm will run a regression model involving one independent variable and one dependent variable. The output will be made to ressemble the output of the ```lm()``` function present in the language.
+<div class = "special">
 
-- ```Julia```
+*Copied from the description of the article.*
 
-The regression algorithm made in Julia will use *Ordinary Least Squares* to solve for the coefficients of any model.
+</div>
+
+The linear regression is one of the most fundamental techniques used in Econometrics. For this reason, I will explore computer algorithms that allow us to perform such regressions. The method that I will use to solve this optimization problem is the [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) (OLS) method.
+
+

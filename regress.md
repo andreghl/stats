@@ -1,5 +1,5 @@
 ---
-title: "A Simple Regression"
+title: "A Linear Regression"
 author: "Andre-Ignace Ghonda Lukoki"
 date: "June 1st, 2024"
 output:
@@ -21,16 +21,8 @@ The linear regression is one of the most fundamental techniques used in Economet
 
 ## Introduction
 
-A simple linear regression algorithm is a computer program able to estimate a model that looks as follows:
-
-$$
-\tag{1}
-y_{i} = \alpha + \beta x_{i} + \epsilon_{i}
-$$
-
-The model includes a vector of dependent variables $y_{i}$, a vector of predictors $x_{i}$, and a is a vector of residuals $\epsilon_{i}$. The linear regression is an attempt at estimating a linear relation between the two variables. 
-<label for="sn-linear"
-       class="margin-toggle sidenote-number"> </label> 
+A linear regression model is an equation of the following form<label for="sn-linear"
+       class="margin-toggle sidenote-number"> </label> :
        
 <input type="checkbox"
        id="sn-linear"
@@ -38,6 +30,22 @@ The model includes a vector of dependent variables $y_{i}$, a vector of predicto
 <span class="sidenote">
 I find [this video](https://youtu.be/YIfANKRmEu4?si=RVnUKshFZ6eB_iYD) by **Mutual Information** to be a nice introduction to linear regressions.
 </span>
+
+$$
+\tag{1}
+y = X \beta
+$$
+
+where the dependent variable $y$ is a vector of size $n$ , $\beta$ is a vector of coefficients and $X$ is a $n \times k$ matrix containing a column of $1$ and $k - 1$ columns of data.
+
+$$
+X = \begin{bmatrix}
+1 & x_{11} & x_{12} & \ldots & x_{1k} \\
+1 & x_{21} & x_{22} & \ldots & x_{2k} \\
+\vdots & \vdots & \vdots & \vdots & \vdots \\
+1 & x_{n1} & x_{n2} & \ldots & x_{nk} \\
+\end{bmatrix}
+$$
 
 
 

@@ -12,7 +12,7 @@
 <meta name="author" content="Andre-Ignace Ghonda Lukoki" />
 
 
-<title>A Simple Regression</title>
+<title>A Linear Regression</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -788,7 +788,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">A Simple Regression</h1>
+<h1 class="title toc-ignore">A Linear Regression</h1>
 <h4 class="author">Andre-Ignace Ghonda Lukoki</h4>
 <h4 class="date">June 1st, 2024</h4>
 
@@ -1220,19 +1220,28 @@ Least Squares</a> (OLS) method.</p>
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>A simple linear regression algorithm is a computer program able to
-estimate a model that looks as follows:</p>
-<p><span class="math display">\[
-\tag{1}
-y_{i} = \alpha + \beta x_{i} + \epsilon_{i}
-\]</span></p>
-<p>The model includes a vector of dependent variables <span class="math inline">\(y_{i}\)</span>, a vector of predictors <span class="math inline">\(x_{i}\)</span>, and a is a vector of residuals
-<span class="math inline">\(\epsilon_{i}\)</span>. The linear regression
-is an attempt at estimating a linear relation between the two variables.
-<label for="sn-linear" class="margin-toggle sidenote-number"> </label></p>
+<p>A linear regression model is an equation of the following
+form<label for="sn-linear" class="margin-toggle sidenote-number"> </label> :</p>
 <p><input type="checkbox" id="sn-linear" class="margin-toggle"></input> <span class="sidenote"> I find <a href="https://youtu.be/YIfANKRmEu4?si=RVnUKshFZ6eB_iYD">this video</a>
 by <strong>Mutual Information</strong> to be a nice introduction to
 linear regressions. </span></p>
+<p><span class="math display">\[
+\tag{1}
+y = X \beta
+\]</span></p>
+<p>where the dependent variable <span class="math inline">\(y\)</span>
+is a vector of size <span class="math inline">\(n\)</span> , <span class="math inline">\(\beta\)</span> is a vector of coefficients and
+<span class="math inline">\(X\)</span> is a <span class="math inline">\(n \times k\)</span> matrix containing a column of
+<span class="math inline">\(1\)</span> and <span class="math inline">\(k
+- 1\)</span> columns of data.</p>
+<p><span class="math display">\[
+X = \begin{bmatrix}
+1 &amp; x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1k} \\
+1 &amp; x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2k} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+1 &amp; x_{n1} &amp; x_{n2} &amp; \ldots &amp; x_{nk} \\
+\end{bmatrix}
+\]</span></p>
 <hr />
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
 <div id="ref-Drury" class="csl-entry">
