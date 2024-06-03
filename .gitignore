@@ -1,16 +1,11 @@
-# ignore all .html and .cssfiles
-.html
-.css
+# Ignore everything
+*
 
-# ignore all .md files except README.md
-.md 
-
-# ignore the additional .R... files
-.RData
-.Rhistory
-.rmd
-
-# ignore the following directories
-/font
-/img
-/resources
+# Except
+!.gitignore
+Julia/*
+!Julia/regress.jl
+R/*
+!R/regress.r
+!config.yaml
+!README.md
