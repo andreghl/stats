@@ -217,7 +217,7 @@ return(output)
 
 }
 
-perf <- performance(10, 1000)
+perf <- performance(1000, 100000)
 
 plot(perf[, 4], perf[, 1], xlab = "Sample size", ylab = "Seconds",
      main = "Time difference as sample size increases", las = 1)
