@@ -113,7 +113,8 @@ lmTime
 
 confint(test, level = 0.95)
 
-speed <- function(n = 10){
+speed <- function(n = 10) 
+{
 
 time <- rep(0, n)
 timeR <- rep(0, n)
@@ -162,9 +163,9 @@ names.arg = rownames(test), beside = TRUE,
 main = "Time difference test", sub = "between regress() and lm()",
 xlab = "Iteration n°", ylab = "Seconds")
 
-mean(test[,1])
-mean(test[,2])
-mean(test[,3])
+mean(test[, 1])
+mean(test[, 2])
+mean(test[, 3])
 
 performance <- function(n = 10, m = 1000){
 
@@ -230,4 +231,5 @@ regress(perf[,2], perf[, 4])
 
 2.362159e-06 * 1000
 
-
+write.csv(test, file = "speed.csv", row.names = F)
+write.csv(perf, file = "performance.csv", row.names = F)
