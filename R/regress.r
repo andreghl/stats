@@ -231,5 +231,5 @@ regress(perf[,2], perf[, 4])
 
 2.362159e-06 * 1000
 
-write.csv(test, file = "speed.csv", row.names = F)
-write.csv(perf, file = "performance.csv", row.names = F)
+write.csv(test, file = "speed.csv", row.names = T)
+write.csv(perf, file = "performance.csv", row.names = T)
