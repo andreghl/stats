@@ -12,11 +12,13 @@ end
 
 function lm(y, X)
 
-    y = values(y)
-    X = values(X)
-
     n = size(X, 1) # Sample size
     K = size(X, 2) # Number of regressors
+    
+    y = values(y)
+    i = ones(n)
+    X = [i X]
+    X = values(X)
 
     beta = inv(X'X)X'y # Estimated coefficients
     yHat = X * beta # Estimates for dependent
