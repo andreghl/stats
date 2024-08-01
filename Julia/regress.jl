@@ -1,8 +1,8 @@
-using CSV, DataFrames, Distributions,  GLM, HypothesisTests, Plots, LinearAlgebra, Random, Statistics
+using DataFrames, Distributions, LinearAlgebra
 
 
 
-function pt(T, df = 300) # Approximation for Pvalue of T Distribution
+function pt(T, df = 300) 
 
    Dist = TDist(df)
    Pvalue = 1 - cdf(Dist, T)
@@ -10,7 +10,7 @@ function pt(T, df = 300) # Approximation for Pvalue of T Distribution
    return Pvalue
 end
 
-function regress(y, X)
+function lm(y, X)
 
     y = values(y)
     X = values(X)
@@ -48,14 +48,3 @@ function regress(y, X)
 
     return (output)
 end
-
-Random.seed!(2024) # Setting the seed for reproducability
-
-x = rand(Normal(3, sqrt(2)), 300)
-y = 3 .+ 2 .* x .+ rand(Normal(0, 1), 300)
-
-X = [ones(300) x]
-
-regress(y, X)
-
-lm(X, y)
