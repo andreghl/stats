@@ -3,11 +3,5 @@
 
 # Except
 !.gitignore
-Julia/*
-!Julia/regress.jl
-R/*
-!R/regress.r
-!R/speed.r
-!R/performance.r
-!config.yaml
-!README.md
+!julia/*
+
