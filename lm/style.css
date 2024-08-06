@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "et-book";
+    src: url("font/normal/normal.eot");
+    src: url("font/normal/normal.eot") format("embedded-opentype"), url("font/normal/normal.woff") format("woff"), url("font/normal/normal.ttf") format("truetype"), url("font/normal/normal.svg") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "et-book";
+    src: url("font/italic/italic.eot");
+    src: url("font/italic/italic.eot") format("embedded-opentype"), url("font/italic/italic.woff") format("woff"), url("font/italic/italic.ttf") format("truetype"), url("font/italic/italic.svg") format("svg");
+    font-weight: normal;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "et-book";
+    src: url("font/bold/bold.eot");
+    src: url("font/bold/bold.eot") format("embedded-opentype"), url("font/bold/bold.woff") format("woff"), url("font/bold/bold.ttf") format("truetype"), url("font/bold/bold.svg") format("svg");
+    font-weight: bold;
+    font-style: normal
+}
+
+/* Adds dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #151515;
+        color: #ddd;
+    }
+
+    a:link {
+        text-shadow: unset;
+        text-decoration: underline;
+    }
+
+}
+
+.description p {
+    font-size: 15px;
+    font-style: italic;
+        width: 87.5%;
+    margin-right: auto;
+}
+
+
+#menu a {
+    margin: 5px;
+}

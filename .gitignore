@@ -1,7 +1,7 @@
-# Ignore everything
-*
+# Ignore
 
-# Except
-!.gitignore
-!julia/*
+assets/
+font/
+resources/
+
 

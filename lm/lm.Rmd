@@ -1,0 +1,105 @@
+---
+title: "A Linear Regression"
+author: "Andre-Ignace Ghonda Lukoki"
+date: "June 1st, 2024"
+output:
+  tufte::tufte_html: 
+    css: style.css
+bibliography: resources/references.bib
+csl: resources/apa.csl
+nocite: "@*"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<div class = "description">
+
+The linear regression is one of the most fundamental technique used in Econometrics. For this reason, I will explore algorithms that allow us to perform such regressions.
+
+</div>
+
+Statistical modeling attempts to find the functional form of the relationship between a set of independent variables, denoted by $X = (X_{1}, X_{2}, \dots, X_{p})$, and a response variable $Y$. The linear regression limits the set of potential functional forms to those that are linear in parameters. A linear regression model is an equation of the following form<label for="sn-linear"
+       class="margin-toggle sidenote-number"></label>:
+
+<input type="checkbox"
+       id="sn-linear"
+       class="margin-toggle"/>
+<span class="sidenote">
+I find [this video](https://youtu.be/YIfANKRmEu4?si=RVnUKshFZ6eB_iYD) by **Mutual Information** to be a nice introduction to linear regressions.
+</span>
+
+$$
+\tag{1}
+y = X \beta + \epsilon
+$$
+
+where the dependent variable $y$ and the errors $e$ are vectors of size $n$ , $\beta$ is a vector of coefficients and $X$ is a $n \times k$ matrix containing a column of $1$ *(the intercept)* and $k - 1$ columns of data *(the regressors)*. The vector of coefficients $\beta$ is estimated according to the following formula:
+
+$$
+\tag{2}
+\beta = (X'X)^{- 1} X'y
+$$
+
+This is the [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) estimator for the coefficients found by minimizing the squared residuals of the model $e'e = (y - X \beta)'(y - X \beta)$ with respect to $\beta$.
+
+$$
+\begin{split}
+\min_{\beta} \phi (\beta) &= (y - X \beta)' (y - X \beta)
+\\
+&= y'y - y' X \beta - \beta' X' y + \beta' X' X \beta
+\\
+&= y'y - 2 \beta' X' y + \beta' X' X \beta
+\end{split}
+$$
+
+Applying the rules of optimization, we take the derivative and set it equal to $0$.
+
+$$
+\begin{split}
+\frac{d}{d \beta}(\dots) = -2X'y + 2 X'X \beta &= 0
+\\
+2X'X \beta &= 2X'y
+\\
+\beta &= (X'X)^{-1}X'y
+\end{split}
+$$
+
+The ```LinearAlgebra.jl``` package makes it easy to manipulate vectors and matrices in Julia. Once the package is loaded into the session and the variables have been defined, we can create a function that takes two arguments, a response variable and a vector of independent variables. The algorithm, then adds an intercept to the matrix of predictors to improve the *goodness-of-fit* of the model.
+
+```julia
+using LinearAlgebra
+
+lm = function(y::Vector{Float64}, X::Matrix{Float64})
+
+       n = length(y)
+       i = ones(n)
+       X = [i X]
+       beta = inv(X'X)X'y
+return(beta)
+end
+```
+
+The inclusion of an intercept is always better than its absence. In the case where the data were to need one, the estimation of the coefficients would be biased. The presence of an intercept when none is necessary does not bias the estimation because the estimated intercept would simply be insignificant.
+
+```{r, echo=FALSE, fig.cap="Scatterplot of two random variables"}
+
+x <- rnorm(250, mean = 23, sd = 8)
+y <- 50 + 2 * x + rnorm(250, mean = 0, sd = 6)
+alpha <- solve(t(x) %*% x) %*% t(x) %*% y
+i <- rep(1, 250)
+X <- cbind(i, x)
+beta <- solve(t(X) %*% X) %*% t(X) %*% y
+
+plot(x, y, main = "Scatterplot", ylab = "y", xlab = "x",
+     xlim = c(0, 50), ylim = c(0, 200))
+abline(a = 0, b = alpha, col = "red")
+abline(a = beta[1], b = beta[2], col = 'blue')
+legend("topleft", legend = c("No Intercept", "With Intercept"),
+       col = c("red", "blue"), lw = c(1, 1))
+
+```
+
+---
+
