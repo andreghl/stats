@@ -1,5 +1,7 @@
 # Ignore
-
+*.html
+*.Rmd
+*.css
 assets/
 font/
 resources/
