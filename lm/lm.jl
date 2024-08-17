@@ -8,7 +8,7 @@ function pt(T, df = 100)
    return Pvalue
 end
 
-function lm(y::Vector{Float64}, X::Matrix{Float64})
+function lm(y::Vector, X::Matrix)
 
     beta = inv(X'X)X'y
 
