@@ -1,13 +1,5 @@
-# Ignore
-*.html
-*.Rmd
-*.css
 *.md
 !README.md
-assets/
-font/
-resources/
-data/
-main.jl
+
 
 
