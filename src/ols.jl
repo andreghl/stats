@@ -24,6 +24,3 @@ function lm(y::Vector, X::Matrix)
     return DataFrame(beta = beta, betaSE = betaSE, tstat = tstat, 
     pvalue = pvalue)
 end
-
-
-
